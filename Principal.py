@@ -1,6 +1,21 @@
 from BD.Conexion import DAO
 import Funciones
 
+"""
+Este apartado coordina todas las funcionalidades para crear el servicio.
+
+Funciones:
+    - Menu principal: Genera una interfaz de consola básica para poder
+        interactuar con el servicio.
+        - Repite de forma recursiva hasta que pueda ejecutar una opción.
+        - Controla la entrada de parámetros correctos.
+        - Corta la ejecución en caso de salida.
+    - EjecutarOpcion: Switch que se encarga de la ejecución de las 
+        distintas funcionalidades.
+        - Devuelve feedback al usuario.
+        - Controla fallos en la ejecucción.
+"""
+
 def MenuPrincipal():
     contituar = True
     while(contituar):
@@ -23,12 +38,12 @@ def MenuPrincipal():
                 break
             else:
                 opcionCorrecta = True
-                ejecutarOpcion(opcion)
+                EjecutarOpcion(opcion)
 
-def ejecutarOpcion(opcion):
+def EjecutarOpcion(opcion):
     dao = DAO()
 
-    if opcion == 1:
+    if opcion == 1:             # 1.- Lista de paquetes
         try: 
             paquetes = dao.ListarPaquetes()
             if len(paquetes) > 0:
@@ -37,13 +52,13 @@ def ejecutarOpcion(opcion):
                 print('No se encontraron paquetes')
         except:
             print('Ocurrió un error')
-    elif opcion == 2:
+    elif opcion == 2:           #  2.- Registrar paquete 
         paquete = Funciones.PedirDatosPaquete()
         try:
             dao.RegistrarPaquete(paquete)
         except:
             print('Ocurrió un error')
-    elif opcion == 3:
+    elif opcion == 3:             # 3.- Actualizar paquete 
         try:
             paquetes = dao.ListarPaquetes()
             if len(paquetes) > 0:
@@ -56,7 +71,7 @@ def ejecutarOpcion(opcion):
                 print('No se encontró el paquete')
         except:
             print('Ocurrió un error')
-    elif opcion == 4:
+    elif opcion == 4:             # 4.- Eliminar paquete
         try:
             paquetes = dao.ListarPaquetes()
             if len(paquetes) > 0:

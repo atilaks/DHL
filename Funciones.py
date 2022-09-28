@@ -1,5 +1,16 @@
-from tkinter.messagebox import NO
+"""
+Este apartado implementa toda la lógica de las funcionalidades del programa.
 
+Funciones:
+    - ListarPaquetes: Tomando como imput los elementos existentes, genera una lista
+        recorriendo un FOR para asignar cada valor.
+    - PedirDatosPaquete: Hace una consulta al usuario para pedir datos del paquete.
+        - Controla los errores de forma si no se ajusta al tamaño en código.
+    - PedirDatosActualizacion: Hace una consulta al usuario para pedir el código del paquete.
+        Verifica la existencia del mismo y consulta nuevamente para modificar los parámetros.
+    - PedirDatosEliminacion: Hace una consulta al usuario para pedir el código del paquete. 
+        Verifica la existencia del mismo y lo elimina.
+"""
 
 def ListarPaquetes(paquetes):
     print('\nPaquetes: \n')
