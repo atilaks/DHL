@@ -13,7 +13,7 @@ def ListarPaquetes(paquetes):
 def PedirDatosPaquete():
     codigoCorrecto = False
     while(not codigoCorrecto):
-        codigo = int(input('Ingresa el código: '))
+        codigo = input('Ingresa el código: ')
         if len(codigo) == 6:
             codigoCorrecto = True
         else:
