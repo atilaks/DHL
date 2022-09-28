@@ -5,7 +5,7 @@ import Funciones
 Este apartado coordina todas las funcionalidades para crear el servicio.
 
 Funciones:
-    - Menu principal: Genera una interfaz de consola básica para poder
+    - MenuPrincipal: Genera una interfaz de consola básica para poder
         interactuar con el servicio.
         - Repite de forma recursiva hasta que pueda ejecutar una opción.
         - Controla la entrada de parámetros correctos.
@@ -13,7 +13,7 @@ Funciones:
     - EjecutarOpcion: Switch que se encarga de la ejecución de las 
         distintas funcionalidades.
         - Devuelve feedback al usuario.
-        - Controla fallos en la ejecucción.
+        - Controla fallos en la ejecución.
 """
 
 def MenuPrincipal():
